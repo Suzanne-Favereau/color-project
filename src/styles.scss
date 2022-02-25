@@ -160,7 +160,7 @@ $validation: mat.define-palette($ms-validation, 500);
 $alerte: mat.define-palette($ms-alerte, 500);
 $erreur: mat.define-palette($ms-erreur, 500);
 
-$color-project-theme: mat.define-light-theme((
+$color-project-first-theme: mat.define-light-theme((
   color: (
     primary: $primary,
     accent: $secondary,
@@ -168,7 +168,7 @@ $color-project-theme: mat.define-light-theme((
   )
 ));
 
-$color-project-theme: mat.define-dark-theme((
+$color-project-second-theme: mat.define-light-theme((
   color: (
     primary: $neutre,
     accent: $validation,
@@ -176,4 +176,12 @@ $color-project-theme: mat.define-dark-theme((
   )
 ));
 
-@include mat.all-component-themes($color-project-theme);
+@include mat.all-component-themes($color-project-first-theme);
+
+.second-theme {
+  @include mat.all-component-themes($color-project-second-theme);
+}
+
+h1 {
+  padding-top: 20px;
+}

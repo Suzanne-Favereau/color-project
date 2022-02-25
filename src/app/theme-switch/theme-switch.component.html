@@ -1,0 +1,26 @@
+<mat-button-toggle-group name="theme" aria-label="Theme Selection" value="t1">
+  <mat-button-toggle value="t1" (click)="selectFirstTheme()">Theme 1</mat-button-toggle>
+  <mat-button-toggle value="t2" (click)="selectSecondTheme()">Theme 2</mat-button-toggle>
+</mat-button-toggle-group>
+
+<table mat-table [dataSource]="themelink">
+
+  <ng-container matColumnDef="angular">
+    <th mat-header-cell *matHeaderCellDef> Theme Angular </th>
+    <td mat-cell *matCellDef="let element"> {{element.angular}} </td>
+  </ng-container>
+  <ng-container matColumnDef="theme1">
+    <th mat-header-cell *matHeaderCellDef> Theme 1 </th>
+    <td mat-cell *matCellDef="let element"> {{element.theme1}} </td>
+  </ng-container>
+  <ng-container matColumnDef="theme2">
+    <th mat-header-cell *matHeaderCellDef> Theme 2 </th>
+    <td mat-cell *matCellDef="let element"> {{element.theme2}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+
+

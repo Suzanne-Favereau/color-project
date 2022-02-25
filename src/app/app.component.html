@@ -1,3 +1,9 @@
-<h1>Button</h1>
-<app-button-overview-example></app-button-overview-example>
+<div [ngClass]="theme">
 
+  <h2>Selectionner un theme</h2>
+  <app-theme-switch (changeTheme)="changeTheme($event)"></app-theme-switch>
+
+  <h1>Button</h1>
+  <app-button-overview-example></app-button-overview-example>
+
+<div>

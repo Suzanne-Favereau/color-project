@@ -1,16 +1,18 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ButtonOverviewExampleComponent } from './button-overview-example/button-overview-example.component';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ButtonOverviewExampleComponent} from './button-overview-example/button-overview-example.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MaterialConfigurationModule} from './shared/material-configuration.module';
+import { ThemeSwitchComponent } from './theme-switch/theme-switch.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ButtonOverviewExampleComponent
+    ButtonOverviewExampleComponent,
+    ThemeSwitchComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,4 +23,5 @@ import {MaterialConfigurationModule} from './shared/material-configuration.modul
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
