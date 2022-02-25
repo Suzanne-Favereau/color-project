@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonOverviewExampleComponent } from './button-overview-example/button-overview-example.component';
 import {MatDividerModule} from '@angular/material/divider';
-import {MaterialConfigurationModule} from './material-configuration.module';
+import {MaterialConfigurationModule} from './shared/material-configuration.module';
 
 @NgModule({
   declarations: [

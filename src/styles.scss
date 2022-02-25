@@ -1,39 +1,179 @@
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
-// Plus imports for other components in your app.
+@use "~@angular/material/theming";
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
 @include mat.core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$color-project-primary: mat.define-palette(mat.$indigo-palette);
-$color-project-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$ms-primary: (
+  50: #E5F1FB,
+  100: #B1D4F2,
+  200: #6FB1E7,
+  300: #55A3E3,
+  400: #3291DC,
+  500: #2382D2,
+  600: #1F73B7,
+  700: #18578B,
+  800: #11446F,
+  900: #063255,
+  contrast: (
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+  )
+);
 
-// The warn palette is optional (defaults to red).
-$color-project-warn: mat.define-palette(mat.$red-palette);
+$ms-secondary: (
+  50: #E8E9F8,
+  100: #B9BCE9,
+  200: #A9ADEA,
+  300: #858BDE,
+  400: #565ED6,
+  500: #3841B7,
+  600: #2C3390,
+  700: #232873,
+  800: #1A1E56,
+  900: #0E112F,
+  contrast: (
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+  )
+);
 
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
+$ms-neutre: (
+  50: #F9F9FA,
+  100:  #F1F1F3,
+  200:  #E8E9ED,
+  300:  #DDDEE3,
+  400:  #C7C8D1,
+  500:  #ABACBA,
+  600:  #818398,
+  700:  #5C5D70,
+  800:  #393A46,
+  900:  #101014,
+  contrast: (
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+  )
+);
+
+$ms-validation: (
+  50: #E9F6F1,
+  100:  #C5E8DA,
+  200:  #A0D9C2,
+  300:  #62C09A,
+  400:  #55B48E,
+  500:  #41A57D,
+  600:  #368766,
+  700:  #2B6E54,
+  800:  #1D4938,
+  900:  #0E251C,
+  contrast: (
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+  )
+);
+
+$ms-alerte: (
+  50: #FFF6E0,
+  100:  #FFEEC2,
+  200:  #FFE3A3,
+  300:  #FFCE5C,
+  400:  #FBC441,
+  500:  #FFBE23,
+  600:  #F5AB00,
+  700:  #C28800,
+  800:  #805900,
+  900:  #4D3600,
+  contrast: (
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+  )
+);
+
+$ms-erreur: (
+  50: #FFE0E6,
+  100:  #FFC2CE,
+  200:  #FFA3B3,
+  300:  #FF4768,
+  400:  #F21D43,
+  500:  #E10028,
+  600:  #AD001F,
+  700:  #94001A,
+  800:  #7A0016,
+  900:  #47000D,
+  contrast: (
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+  )
+);
+
+$primary: mat.define-palette($ms-primary, 500);
+$secondary: mat.define-palette($ms-secondary, 500);
+$neutre: mat.define-palette($ms-neutre, 500);
+$validation: mat.define-palette($ms-validation, 500);
+$alerte: mat.define-palette($ms-alerte, 500);
+$erreur: mat.define-palette($ms-erreur, 500);
+
 $color-project-theme: mat.define-light-theme((
   color: (
-    primary: $color-project-primary,
-    accent: $color-project-accent,
-    warn: $color-project-warn,
+    primary: $primary,
+    accent: $secondary,
+    warn: $alerte,
   )
 ));
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
+$color-project-theme: mat.define-dark-theme((
+  color: (
+    primary: $neutre,
+    accent: $validation,
+    warn: $erreur,
+  )
+));
+
 @include mat.all-component-themes($color-project-theme);
-
-/* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
